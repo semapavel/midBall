@@ -1,11 +1,15 @@
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 29 };
-
-let arr = [ vasya, petya, masha ];
-
-alert( getAverageAge(arr) );
-
-function getAverageAge(users){
-	return users.reduce((sum,item)=>sum+item.age,0)/users.length
+function unique(arr){
+	array=[];
+	for (let item of arr){
+		if(!array.includes(item)){
+			array.push(item)
+		}
+	}
+return array;
 }
+ 
+ let strings = ["кришна", "кришна", "харе", "харе",
+	"харе", "харе", "кришна", "кришна", ":-O"
+ ];
+ 
+ alert( unique(strings) ); // кришна, харе, :-O
