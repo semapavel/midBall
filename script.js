@@ -1,15 +1,7 @@
-function readNumber(){
-	let a;
-	do {
-		 a=prompt('Введите число a:','');
-	} while(!isFinite(a));
-	if(a==''||a==null){
-		return null
-	}
-return +a
+function random(min, max){
+	return min+(Math.random()*(max-min));
 }
-
-alert(readNumber());
+alert( random(6, 7));
 
 
  
