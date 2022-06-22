@@ -1,1 +1,1 @@
-# Переведите текст вида border-left-width в borderLeftWidth
+# Фильтрация по диапазону
