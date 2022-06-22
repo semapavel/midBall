@@ -1,17 +1,16 @@
-let menu = {
-	width: 200,
-	height: 300,
-	title: "My menu"
+let calculator = {
+	read(){
+		this.a=+prompt('Введите число a:',0);
+		this.b=+prompt('Введите число b:',0);
+	},
+	sum(){
+		return this.a+this.b;
+	},
+	mul(){
+		return this.a*this.b;
+	}
  };
  
-
-multiplyNumeric(menu);
-console.log(menu);
-
- function multiplyNumeric(obj){
-	for(let key in obj){
-		if (typeof obj[key]=='number'){
-			obj[key]*=2;
-		}
-	}
- }
+ calculator.read();
+ alert( calculator.sum() );
+ alert( calculator.mul() );
