@@ -1,18 +1,15 @@
 
-function Calculator(){
+function Accumulator(startingValue){
+	this.value=startingValue;
 	this.read=function(){
-		this.a=+prompt('Введите число a:',0);
-		this.b=+prompt('Введите число b:',0);
-	}
-	this.sum=function(){
-		return this.a+this.b;
-	}
-	this.mul=function(){
-		return this.a*this.b;
+		this.value+=+prompt('Введите число a:',0);
 	}
 }
-let calculator = new Calculator();
+let accumulator = new Accumulator(1);
 
- calculator.read();
- alert( calculator.sum() );
- alert( calculator.mul() );
+ accumulator.read();
+ accumulator.read();
+ accumulator.read();
+ accumulator.read();
+ console.log(accumulator.value);
+ 
