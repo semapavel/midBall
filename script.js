@@ -1,22 +1,16 @@
-let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
-let petya = { name: "Петя", surname: "Иванов", id: 2 };
-let masha = { name: "Маша", surname: "Петрова", id: 3 };
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
 
-let users = [ vasya, petya, masha ];
+let arr = [ vasya, petya, masha ];
 
-let usersMapped = users.map(
-	item=>({
-	fullName: `${item.name} ${item.surname}`,
-	id: item.id
-})) /* ... ваш код ... */
+sortByAge(arr);
 
-/*
-usersMapped = [
-  { fullName: "Вася Пупкин", id: 1 },
-  { fullName: "Петя Иванов", id: 2 },
-  { fullName: "Маша Петрова", id: 3 }
-]
-*/
+// теперь: [vasya, masha, petya]
+alert(arr[0].name); // Вася
+alert(arr[1].name); // Маша
+alert(arr[2].name); // Петя
 
-alert( usersMapped[1].id ) // 1
-alert( usersMapped[1].fullName ) // Вася Пупкин
+function sortByAge(users){
+	users.sort((a,b)=>a.age>b.age?1:-1)
+}
