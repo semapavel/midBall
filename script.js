@@ -1,16 +1,12 @@
-function getMaxSubSum(arr) {
-	let max = 0;
-	let sum = 0;
-	for(let num of arr){
-		sum+=num;
-		if(sum>max)max=sum;
-		if(sum<0) sum=0;
-	}
-	return max
-}
+function camelize(str){
+	return str
+	.split('-')
+	.map(
+		(word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+		)
+		.join('');
+ }
 
-alert( getMaxSubSum([-1, 2, 3, -9]) );
-alert( getMaxSubSum([-1, 2, 3, -9, 11]) );
-alert( getMaxSubSum([-2, -1, 1, 2]) );
-alert( getMaxSubSum([1, 2, 3]) );
-alert( getMaxSubSum([100, -9, 2, -3, 5]) );
+alert(camelize("background-color"));
+alert(camelize("list-style-image"));
+alert(camelize("-webkit-transition"));

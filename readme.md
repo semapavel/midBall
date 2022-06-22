@@ -1,1 +1,1 @@
-# Подмассив наибольшей суммы
+# Переведите текст вида border-left-width в borderLeftWidth
