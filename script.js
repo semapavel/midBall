@@ -1,16 +1,16 @@
-let calculator = {
-	read(){
-		this.a=+prompt('Введите число a:',0);
-		this.b=+prompt('Введите число b:',0);
+let ladder = {
+	step: 0,
+	up() {
+		this.step++;
+		return this;
 	},
-	sum(){
-		return this.a+this.b;
+	down() {
+		this.step--;
+		return this;
 	},
-	mul(){
-		return this.a*this.b;
+	showStep() {
+		alert( this.step );
+		return this;
 	}
- };
- 
- calculator.read();
- alert( calculator.sum() );
- alert( calculator.mul() );
+}
+ladder.up().down().up().up().down().up().showStep();
