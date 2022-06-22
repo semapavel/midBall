@@ -1,7 +1,5 @@
-function randomInteger(min, max){
-	return Math.round(min-0.5+(Math.random()*(max-min+1)));
+function ucFirst(str){
+	if (!str) return str;
+	return str[0].toUpperCase() + str.slice(1);
 }
-alert( randomInteger(4, 7));
-
-
- 
+alert(ucFirst(""));
