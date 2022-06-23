@@ -1,13 +1,12 @@
-function aclean(arr) {
-	let map=new Map();
-	for(let item of arr){
-		let sort=item.toLowerCase().split('').sort().join('');
-		map.set(sort,item);
-	}
-	return Array.from(map.values())
-	/* ваш код */
- }
- 
- let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+let messages = [
+	{text: "Hello", from: "John"},
+	{text: "How goes?", from: "John"},
+	{text: "See you soon", from: "Alice"}
+];
 
- alert( aclean(arr) ); // "nap,teachers,ear" или "PAN,cheaters,era"
+let read=new WeakSet();
+read.add(messages[0]);
+read.add(messages[1]);
+read.add(messages[0]);
+alert("Read message 0: " + read.has(messages[2]));
+messages.shift();
