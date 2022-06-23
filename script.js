@@ -1,10 +1,11 @@
 
-function getLocalDay(date){
-	let day= date.getDay();
-	if(day==0){
-		day=7
-	};
-	return day;
+function getDateAgo(date, days){
+	let dates=new Date(date);
+	dates.setDate(date.getDate()-days);
+	 return dates.getDate();
 }
-let date = new Date(2012, 0, 8);  // 3 января 2012 года
-alert( getLocalDay(date) );        // нужно вывести "ВТ"
+let date = new Date(2015, 0, 2);
+
+alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+alert( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
+alert( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
