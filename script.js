@@ -1,15 +1,10 @@
-function unique(arr){
-	array=[];
-	for (let item of arr){
-		if(!array.includes(item)){
-			array.push(item)
-		}
-	}
-return array;
-}
+function unique(arr) {
+	return Array.from(new Set(arr))
+	/* ваш код */
+ }
  
- let strings = ["кришна", "кришна", "харе", "харе",
-	"харе", "харе", "кришна", "кришна", ":-O"
+ let values = ["Hare", "Krishna", "Hare", "Krishna",
+	"Krishna", "Krishna", "Hare", "Hare", ":-O"
  ];
  
- alert( unique(strings) ); // кришна, харе, :-O
+ alert( unique(values) ); // Hare,Krishna,:-O
