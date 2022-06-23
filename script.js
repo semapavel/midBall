@@ -1,7 +1,17 @@
-let user = { name: "John", years: 30 };
-
-let {name,years:age,isAdmin=false}=user;
-
-alert( name ); // John
-alert( age ); // 30
-alert( isAdmin ); // false
+function topSalary(salaries){
+	let maxName=null;
+	let maxSalary=0;
+	for(let [name,salary] of Object.entries(salaries)){
+		if (maxSalary<salary){
+			maxSalary=salary;
+			maxName=name;
+		}
+	}
+	return maxName;
+}
+let salaries = {
+	"John": 300,
+	"Pete": 300,
+	"Mary": 250
+ };
+ console.log(topSalary(salaries));
