@@ -1,6 +1,8 @@
 
-function getLastDayOfMonth(year, month){
-	return new Date(year,month+1,0).getDate()
+function getSecondsToTomorrow(){
+	let date=new Date();
+	let tomor=new Date(date.getFullYear(),date.getMonth(),date.getDate()+1)
+	return (tomor-date)/1000
 }
 
-alert( getLastDayOfMonth(2012, 1) );
+alert(getSecondsToTomorrow());
