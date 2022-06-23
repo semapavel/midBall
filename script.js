@@ -3,13 +3,8 @@ let salaries = {
 	"Pete": 300,
 	"Mary": 250
  };
- function sumSalaries(salaries){
-	let sum=0;
-	for(let num of Object.values(salaries)){
-		sum+=num;
+ function count(obj){
+	return Object.keys(obj).length
+}
 
-	}
-	return sum;
- }
-
- alert( sumSalaries(salaries) ); // 650
+ alert( count(salaries) ); // 650
