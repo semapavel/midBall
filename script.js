@@ -1,7 +1,10 @@
 
-function getWeekDay(date){
-	let day=['ВС','ПН','ВТ','СР','ЧТ','ПТ','СБ'];
-	return day[date.getDay()]
+function getLocalDay(date){
+	let day= date.getDay();
+	if(day==0){
+		day=7
+	};
+	return day;
 }
-let date = new Date(2012, 0, 3);  // 3 января 2012 года
-alert( getWeekDay(date) );        // нужно вывести "ВТ"
+let date = new Date(2012, 0, 8);  // 3 января 2012 года
+alert( getLocalDay(date) );        // нужно вывести "ВТ"
