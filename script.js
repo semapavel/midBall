@@ -1,9 +1,15 @@
-let messages = [
-	{text: "Hello", from: "John"},
-	{text: "How goes?", from: "John"},
-	{text: "See you soon", from: "Alice"}
-];
+let salaries = {
+	"John": 100,
+	"Pete": 300,
+	"Mary": 250
+ };
+ function sumSalaries(salaries){
+	let sum=0;
+	for(let num of Object.values(salaries)){
+		sum+=num;
 
-let read = new WeakMap();
-read.set(messages[0], new Date());
-console.log(read);
+	}
+	return sum;
+ }
+
+ alert( sumSalaries(salaries) ); // 650
