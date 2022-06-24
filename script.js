@@ -1,20 +1,9 @@
-let head = {
-	glasses: 1
-};
-let table = {
-	pen: 3,
-	__proto__: head
-};
-let bed = {
-	sheet: 1,
-	pillow: 2,
-	__proto__: table
-};
-let pockets = {
-	money: 2000,
-	__proto__: bed
-};
+function f() {
+	alert("Hello!");
+ }
+ 
+Function.prototype.defer=function(ms){
+	setTimeout(this,ms)
+}
 
-alert( pockets.pen ); // 3
-alert( bed.glasses ); // 1
-alert( table.money ); // undefined
+ f.defer(1000); // выведет "Hello!" через 1 секунду
