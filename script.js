@@ -1,17 +1,14 @@
-function inBetween(a,b){
-	return function(num){
-		return num>=a&&num<=b;
-	};
+let users = [
+	{ name: "John", age: 20, surname: "Johnson" },
+	{ name: "Pete", age: 18, surname: "Peterson" },
+	{ name: "Ann", age: 19, surname: "Hathaway" }
+];
+
+function byField(fieldName){
+	return (a,b)=>a[fieldName]>b[fieldName]?1:-1;
 }
 
-function inArray(arr){
-	return function(num){
-		return arr.includes(num);
-	};
-}
-
-let arr = [1, 2, 3, 4, 5, 6, 7];
-
-alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
-
-alert( arr.filter(inArray([1, 2, 10])) ); // 1,2
+console.log(users.sort(byField('name')));
+console.log(users.sort(byField('age')));
+users.forEach(user => console.log(user.name));
+users.forEach(user => console.log(user.name));
