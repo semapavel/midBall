@@ -1,32 +1,16 @@
-function work(a, b) {
-	alert( a + b ); // произвольная функция или метод
+function f(x) {
+	alert(x);
  }
+ function delay(f, ms) {
+
+	return function() {
+	  setTimeout(() => f.apply(this, arguments), ms);
+	};
  
- work = spy(work);
+ } 
+ // создаём обёртки
+ let f1000 = delay(f, 1000);
+ let f1500 = delay(f, 1500);
  
- work(1, 2); // 3
- work(4, 5); // 9
- 
- for (let args of work.calls) {
-	alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
- }
- function spy(func) {
-
-  function wrapper(...args) {
-    wrapper.calls.push(args);
-    return func.apply(this, arguments);
-  }
-
-  wrapper.calls = [];
-
-  return wrapper;
-}
-
-function spy(func){
-	function wrapper(...args){
-		wrapper.calls.push(args);
-		return func.apply(this,arguments);
-	}
-	wrapper.calls=[];
-	return wrapper;
- }
+ f1000("test"); // показывает "test" после 1000 мс
+ f1500("test"); // показывает "test" после 1500 мс
