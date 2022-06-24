@@ -1,25 +1,21 @@
-let room = {
-	number: 23
- };
- 
- let meetup = {
-	title: "Совещание",
-	occupiedBy: [{name: "Иванов"}, {name: "Петров"}],
-	place: room
- };
- 
- // цикличные ссылки
- room.occupiedBy = meetup;
- meetup.self = meetup;
- 
- alert( JSON.stringify(meetup, function replacer(key, value) {
-	return(key!=""&&value==meetup)?undefined:value;
- }));
- 
- /* в результате должно быть:
- {
-	"title":"Совещание",
-	"occupiedBy":[{"name":"Иванов"},{"name":"Петров"}],
-	"place":{"number":23}
- }
- */
+// function sumTo(n){
+// 	let sum=0;
+// 	for (let i = 1; i <= n; i++){
+// 		sum += i;
+// 	}
+// 	return sum;
+// }
+
+// function sumTo(n){
+// 	if(n==1){
+// 		return 1
+// 	}else{
+// 		return n + sumTo(n - 1);
+// 	}
+// }
+
+function sumTo(n){
+	return n*(n+1)/2;
+}
+
+alert( sumTo(100) );
