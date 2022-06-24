@@ -1,14 +1,22 @@
-let users = [
-	{ name: "John", age: 20, surname: "Johnson" },
-	{ name: "Pete", age: 18, surname: "Peterson" },
-	{ name: "Ann", age: 19, surname: "Hathaway" }
-];
-
-function byField(fieldName){
-	return (a,b)=>a[fieldName]>b[fieldName]?1:-1;
+function makeCounter() {
+	let count = 0;
+	function counter(){
+		 return count++
+	}
+	counter.set=value=>count=value;
+	counter.decrease=()=>count--;
+	return counter;
 }
-
-console.log(users.sort(byField('name')));
-console.log(users.sort(byField('age')));
-users.forEach(user => console.log(user.name));
-users.forEach(user => console.log(user.name));
+ 
+let counter = makeCounter();
+ 
+alert( counter() ); // 0
+alert( counter() ); // 1
+ 
+counter.set(10); // установить новое значение счётчика
+ 
+alert( counter() ); // 10
+ 
+counter.decrease(); // уменьшить значение счётчика на 1
+ 
+alert( counter() ); // 10 (вместо 11)
