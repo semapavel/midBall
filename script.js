@@ -12,19 +12,24 @@ let list = {
 	}
  };
 
-// function printList(list){
-// 	let obj=list;
-// 	while(obj){
-// 		alert(obj.value);
-// 		obj=obj.next;
-// 	}
-// }
-
-function printList(list){
-	alert(list.value);
-	if(list.next){
-		printList(list.next);
+function printReverseList(list){
+	let arr=[];
+	let obj=list;
+ 
+	while (obj){
+		arr.push(obj.value);
+		obj=obj.next;
+	}
+	for(let i=arr.length-1;i>=0;i--){
+		alert(arr[i]);
 	}
 }
 
-printList(list);
+// function printReverseList(list){
+// 	if(list.next){
+// 		printReverseList(list.next);
+// 	}
+// 	alert(list.value);
+// }
+
+printReverseList(list);
