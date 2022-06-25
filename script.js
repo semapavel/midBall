@@ -1,26 +1,36 @@
-document.onclick = function(e) { // показывает координаты точки клика
-	coords.innerHTML = e.clientX + ':' + e.clientY;
-};
+function positionAt(anchor, position, elem) {
 
-let fieldCoords = field.getBoundingClientRect();
+	let anchorCoords = anchor.getBoundingClientRect();
 
-let answer = [
-	[
-		fieldCoords.left,
-		fieldCoords.top
-	],
-	[
-		fieldCoords.right,
-		fieldCoords.bottom
-	],
-	[
-		fieldCoords.left + field.clientLeft,
-		fieldCoords.top + field.clientTop
-	],
-	[
-		fieldCoords.left + field.clientLeft + field.clientWidth,
-		fieldCoords.top + field.clientTop + field.clientHeight
-	]
-];
+	switch (position) {
+		case "top":
+			elem.style.left = anchorCoords.left + "px";
+			elem.style.top = anchorCoords.top - elem.offsetHeight + "px";
+			break;
 
-alert(answer.join('  '));
+			case "right":
+				elem.style.left = anchorCoords.left + anchor.offsetWidth + "px";
+				elem.style.top = anchorCoords.top + "px";
+				break;
+
+				case "bottom":
+					elem.style.left = anchorCoords.left + "px";
+					elem.style.top = anchorCoords.top + anchor.offsetHeight + "px";
+					break;
+		}
+}
+function showNote(anchor, position, html) {
+
+	let note = document.createElement('div');
+	note.className = "note";
+	note.innerHTML = html;
+	document.body.append(note);
+
+	positionAt(anchor, position, note);
+}
+
+let blockquote = document.querySelector('blockquote');
+
+showNote(blockquote, "top", "note above");
+showNote(blockquote, "right", "note at the right");
+showNote(blockquote, "bottom", "note below");
