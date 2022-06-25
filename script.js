@@ -12,21 +12,37 @@ function positionAt(anchor, position, elem) {
 	let anchorCoords = getCoords(anchor);
 
 	switch (position) {
-		case "top":
+		case "top-out":
 			elem.style.left = anchorCoords.left + "px";
 			elem.style.top = anchorCoords.top - elem.offsetHeight + "px";
 			break;
 
-			case "right":
-				elem.style.left = anchorCoords.left + anchor.offsetWidth + "px";
-				elem.style.top = anchorCoords.top + "px";
-				break;
+		case "right-out":
+			elem.style.left = anchorCoords.left + anchor.offsetWidth + "px";
+			elem.style.top = anchorCoords.top + "px";
+			break;
 
-				case "bottom":
-					elem.style.left = anchorCoords.left + "px";
-					elem.style.top = anchorCoords.top + anchor.offsetHeight + "px";
-					break;
-		}
+		case "bottom-out":
+			elem.style.left = anchorCoords.left + "px";
+			elem.style.top = anchorCoords.top + anchor.offsetHeight + "px";
+			break;
+
+		case "top-in":
+			elem.style.left = anchorCoords.left + "px";
+			elem.style.top = anchorCoords.top + "px";
+			break;
+
+		 case "right-in":
+			elem.style.width = '150px';
+			elem.style.left = anchorCoords.left + anchor.offsetWidth - elem.offsetWidth + "px";
+			elem.style.top = anchorCoords.top + "px";
+			break;
+
+		 case "bottom-in":
+			elem.style.left = anchorCoords.left + "px";
+			elem.style.top = anchorCoords.top + anchor.offsetHeight - elem.offsetHeight + "px";
+			break;
+	}
 }
 function showNote(anchor, position, html) {
 
@@ -40,6 +56,9 @@ function showNote(anchor, position, html) {
 
 let blockquote = document.querySelector('blockquote');
 
-showNote(blockquote, "top", "note above");
-showNote(blockquote, "right", "note at the right");
-showNote(blockquote, "bottom", "note below");
+showNote(blockquote, "bottom-out", "note bottom-out");
+showNote(blockquote, "top-in", "note top-in");
+showNote(blockquote, "right-out", "note right-out");
+showNote(blockquote, "bottom-in", "note bottom-in");
+showNote(blockquote, "top-out", "note top-out");
+
