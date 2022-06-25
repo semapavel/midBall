@@ -1,29 +1,18 @@
-.nav {
-	height: 40px;
-	width: 80%;
-	margin: auto;
+.left {
+	float:left;
+	width:30%;
+	background: #aef;
  }
 
- .nav .left {
-	float: left;
-	cursor: pointer;
- }
+ .right {
+	float:right;
+	width:70%;
 
- .nav .right {
-	float: right;
-	cursor: pointer;
- }
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 
- .nav .pages {
-	list-style: none;
-	text-align: center;
-	margin: 0;
-	padding: 0;
- }
+	border-left: 2px solid red;
+	padding-left: 10px;
 
- .nav .pages li {
-	display: inline;
-	margin: 0 3px;
-	line-height: 40px;
-	cursor: pointer;
+	background: tan;
  }
