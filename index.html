@@ -8,42 +8,14 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<ul>
-		<li>Животные
-		  <ul>
-			 <li>Млекопитающие
-				<ul>
-				  <li>Коровы</li>
-				  <li>Ослы</li>
-				  <li>Собаки</li>
-				  <li>Тигры</li>
-				</ul>
-			 </li>
-			 <li>Другие
-				<ul>
-				  <li>Змеи</li>
-				  <li>Птицы</li>
-				  <li>Ящерицы</li>
-				</ul>
-			 </li>
-		  </ul>
-		</li>
-		<li>Рыбы
-		  <ul>
-			 <li>Аквариумные
-				<ul>
-				  <li>Гуппи</li>
-				  <li>Скалярии</li>
-				</ul>
-			 </li>
-			 <li>Морские
-				<ul>
-				  <li>Морская форель</li>
-				</ul>
-			 </li>
-		  </ul>
-		</li>
-	 </ul>
+	<div id="clock">
+		<span class="hour">hh</span>:<span class="min">mm</span>:<span class="sec">ss</span>
+	</div>
+<!-- клик по этой кнопке вызовет clockStart() -->
+	  <input type="button" onclick="clockStart()" value="Start">
+
+	  <!-- клик по этой кнопке вызовет clockStop() -->
+	  <input type="button" onclick="clockStop()" value="Stop">
 </body>
 <script src="/script.js"></script>
 </html>
