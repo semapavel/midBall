@@ -1,3 +1,5 @@
-console.log(document.body.firstElementChild);
-console.log(document.body.children[1]);
-console.log(document.body.children[1].lastElementChild);
+let table = document.body.firstElementChild;
+
+for (let i = 0; i < table.rows.length; i++) {
+  table.rows[i].cells[i].style.backgroundColor = 'red';
+}
