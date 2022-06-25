@@ -1,5 +1,4 @@
-let table = document.body.firstElementChild;
-
-for (let i = 0; i < table.rows.length; i++) {
-  table.rows[i].cells[i].style.backgroundColor = 'red';
+for (let li of document.querySelectorAll('li')) {
+	let text=li.firstChild.data;
+	console.log(text);
 }
