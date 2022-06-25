@@ -1,5 +1,26 @@
-let sortedRows = Array.from(table.rows)
-  .slice(1)
-  .sort((rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1);
+function showNotification({top = 0, right = 0, className, html}) {
+	let notification = document.createElement('div');
+	notification.className = "notification";
+	if (className) {
+	  notification.classList.add(className);
+	}
 
-table.tBodies[0].append(...sortedRows);
+	notification.style.top = top + 'px';
+	notification.style.right = right + 'px';
+
+	notification.innerHTML = html;
+	document.body.append(notification);
+
+	setTimeout(() => notification.remove(), 1500);
+ }
+
+ // test it
+ let i = 1;
+ setInterval(() => {
+	showNotification({
+	  top: 10,
+	  right: 50,
+	  html: 'Hello ' + i++,
+	  className: "welcome"
+	});
+ }, 2000);
