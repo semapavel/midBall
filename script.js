@@ -1,12 +1,43 @@
-let ul = document.createElement('ul');
-document.body.append(ul);
+let data = {
+  "Рыбы": {
+	 "форель": {},
+	 "лосось": {}
+  },
 
-while (true) {
-	let data = prompt("Введите текст для элемента списка", "");
-	if (!data) {
-		break
-	}
-	let li = document.createElement('li');
-	li.textContent = data;
-	ul.append(li);
+  "Деревья": {
+	 "Огромные": {
+		"секвойя": {},
+		"дуб": {}
+	 },
+	 "Цветковые": {
+		"яблоня": {},
+		"магнолия": {}
+	 }
+  }
+};
+
+function createTree(container, obj) {
+	container.append(createTreeDom(obj));
 }
+
+function createTreeDom(obj) {
+	if (!Object.keys(obj).length) return;
+
+	let ul = document.createElement('ul');
+
+	for (let key in obj) {
+		let li = document.createElement('li');
+		li.innerHTML = key;
+		let childrenUl = createTreeDom(obj[key]);
+		if (childrenUl) {
+			li.append(childrenUl);
+		}
+		
+		ul.append(li);
+	}
+	
+	return ul;
+}
+
+let container = document.getElementById('container');
+createTree(container, data);
