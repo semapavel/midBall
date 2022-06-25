@@ -1,28 +1,28 @@
-.note {
-	position: absolute;
-	z-index: 1000;
-	padding: 5px;
-	border: 1px solid black;
-	background: white;
-	text-align: center;
-	font: italic 14px serif;
+.icon {
+	width: 16px;
+	height: 16px;
+	float: left;
  }
- 
- blockquote {
-	background: #f9f9f9;
-	border-left: 10px solid #ccc;
-	margin: 0 0 0 100px;
-	padding: .5em 10px;
-	quotes: "\201C""\201D""\2018""\2019";
-	display: inline-block;
-	white-space: pre;
+
+ .open .icon {
+	cursor: pointer;
+	background: url(https://js.cx/sprite-tree/minus.gif);
  }
- 
- blockquote:before {
-	color: #ccc;
-	content: open-quote;
-	font-size: 4em;
-	line-height: .1em;
-	margin-right: .25em;
-	vertical-align: -.4em;
+
+ .closed .icon {
+	cursor: pointer;
+	background: url(https://js.cx/sprite-tree/plus.gif);
+ }
+
+ .leaf .icon {
+	cursor: text;
+	background: url(https://js.cx/sprite-tree/article.gif);
+ }
+
+ li {
+	list-style: none;
+ }
+
+ .text {
+	margin: 6px 0 6px 16px;
  }
