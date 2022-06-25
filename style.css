@@ -1,11 +1,15 @@
-.hour {
-	color: red
- }
+table {
+  border-collapse: collapse;
+}
 
- .min {
-	color: green
- }
+td,
+th {
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+}
 
- .sec {
-	color: blue
- }
+th {
+  font-weight: bold;
+  background-color: #E6E6E6;
+}
