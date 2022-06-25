@@ -1,4 +1,2 @@
-for (let li of document.querySelectorAll('li')) {
-	let text=li.firstChild.data;
-	console.log(text);
-}
+let elem = document.querySelector('[data-widget-name]');
+alert(elem.dataset.widgetName);
