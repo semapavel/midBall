@@ -1,26 +1,12 @@
-function showNotification({top = 0, right = 0, className, html}) {
-	let notification = document.createElement('div');
-	notification.className = "notification";
-	if (className) {
-	  notification.classList.add(className);
-	}
+let div = document.createElement('div');
 
-	notification.style.top = top + 'px';
-	notification.style.right = right + 'px';
+div.style.overflowY = 'scroll';
+div.style.width = '50px';
+div.style.height = '50px';
 
-	notification.innerHTML = html;
-	document.body.append(notification);
+document.body.append(div);
+let scrollWidth = div.offsetWidth - div.clientWidth;
 
-	setTimeout(() => notification.remove(), 1500);
- }
+div.remove();
 
- // test it
- let i = 1;
- setInterval(() => {
-	showNotification({
-	  top: 10,
-	  right: 50,
-	  html: 'Hello ' + i++,
-	  className: "welcome"
-	});
- }, 2000);
+alert(scrollWidth);
